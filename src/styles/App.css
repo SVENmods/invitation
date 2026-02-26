@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: light;
+}
+
+:root {
+	font-size: 16px;
+}
+
+/* =======================
+   Local font faces
+   ======================= */
+
+/* Oranienbaum – headings */
+@font-face {
+	font-family: 'Oranienbaum';
+	src:
+		url('/fonts/Oranienbaum/Oranienbaum-Regular.woff2') format('woff2'),
+		url('/fonts/Oranienbaum/Oranienbaum-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Source Serif 4 – body text (invitation, location description) */
+@font-face {
+	font-family: 'Source Serif 4';
+	src:
+		url('/fonts/SourceSerif4/SourceSerif4-Regular.woff2') format('woff2'),
+		url('/fonts/SourceSerif4/SourceSerif4-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Source Serif 4';
+	src:
+		url('/fonts/SourceSerif4/SourceSerif4-SemiBold.woff2') format('woff2'),
+		url('/fonts/SourceSerif4/SourceSerif4-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Manrope – UI (forms, timer, buttons) */
+@font-face {
+	font-family: 'Manrope';
+	src:
+		url('/fonts/Manrope/Manrope-Regular.woff2') format('woff2'),
+		url('/fonts/Manrope/Manrope-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Manrope';
+	src:
+		url('/fonts/Manrope/Manrope-SemiBold.woff2') format('woff2'),
+		url('/fonts/Manrope/Manrope-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Tailwind font utilities: font-oranienbaum, font-source-serif, font-manrope */
+@theme {
+	--font-oranienbaum: 'Oranienbaum', 'Times New Roman', serif;
+	--font-source-serif: 'Source Serif 4', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', serif;
+	--font-manrope: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html {
+	height: auto;
+	scroll-behavior: smooth;
+	width: 100%;
+}
+
+html,
+body,
+#root {
+	min-width: 320px;
+}
+
+body,
+#root {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+/* =======================
+   Font usage
+   ======================= */
+
+/* Default text: Source Serif 4 */
+body {
+	font-family: 'Source Serif 4', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', serif;
+	color: #111827;
+}
+
+/* Headings: Oranienbaum */
+h1,
+h2,
+h3,
+.heading,
+.invitation-title {
+	font-family: 'Oranienbaum', 'Times New Roman', serif;
+	letter-spacing: 0.03em;
+}
+
+/* Invitation text & location description explicitly (если будут отдельные блоки) */
+.invitation-text,
+.location-description {
+	font-family: 'Source Serif 4', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', serif;
+}
+
+/* UI: формы, кнопки, таймер и пр. */
+button,
+input,
+select,
+textarea,
+.form,
+.form-control,
+.timer,
+.timer-value,
+.timer-label,
+.btn {
+	font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html{
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.4),
+			rgba(255, 255, 255, 0.4)
+		),
+		url('/img/main-bg.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
