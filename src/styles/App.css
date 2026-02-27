@@ -1,7 +1,7 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-@plugin "daisyui" {
-  themes: light;
+@plugin 'daisyui' {
+	themes: light;
 }
 
 :root {
@@ -67,9 +67,48 @@
 
 /* Tailwind font utilities: font-oranienbaum, font-source-serif, font-manrope */
 @theme {
-	--font-oranienbaum: 'Oranienbaum', 'Times New Roman', serif;
-	--font-source-serif: 'Source Serif 4', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', serif;
-	--font-manrope: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--font-display: 'Oranienbaum', 'Times New Roman', serif;
+	--font-body:
+		'Source Serif 4', system-ui, -apple-system, BlinkMacSystemFont,
+		'Segoe UI', serif;
+	--font-ui:
+		'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		sans-serif;
+	/* ---------------------------
+     Colors (Design Tokens)
+  ---------------------------- */
+	--color-blue-900: #1f3c73; /* primary text, primary button */
+	--color-blue-700: #2f5aa6; /* hover, active */
+	--color-blue-400: #8fa6d6; /* secondary accents */
+
+	--color-ivory-50: #f6f3ec; /* page background */
+	--color-paper-100: #e9e3d7; /* cards, envelope */
+	--color-beige-200: #d9d2c3; /* borders, dividers */
+	--color-slate-500: #6b7a99; /* muted text */
+
+	--color-gold-500: #c9a96a; /* accent line only */
+
+	/* Optional: semantic aliases (recommended) */
+	--color-bg: var(--color-ivory-50);
+	--color-surface: var(--color-paper-100);
+	--color-border: var(--color-beige-200);
+	--color-ink: var(--color-blue-900);
+	--color-ink-muted: var(--color-slate-500);
+	--color-accent: var(--color-gold-500);
+
+	/* ---------------------------
+     Radius / Shadow / Spacing
+  ---------------------------- */
+	--radius-sm: 6px;
+	--radius-md: 10px;
+	--radius-lg: 14px;
+
+	/* Subtle luxury shadows only */
+	--shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
+	--shadow-card: 0 12px 28px rgba(0, 0, 0, 0.05);
+
+	/* Optional: container width token */
+	--container-content: 1040px;
 }
 
 html {
@@ -97,7 +136,13 @@ body,
 
 /* Default text: Source Serif 4 */
 body {
-	font-family: 'Source Serif 4', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', serif;
+	font-family:
+		'Source Serif 4',
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		serif;
 	color: #111827;
 }
 
@@ -114,7 +159,13 @@ h3,
 /* Invitation text & location description explicitly (если будут отдельные блоки) */
 .invitation-text,
 .location-description {
-	font-family: 'Source Serif 4', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', serif;
+	font-family:
+		'Source Serif 4',
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		serif;
 }
 
 /* UI: формы, кнопки, таймер и пр. */
@@ -128,14 +179,18 @@ textarea,
 .timer-value,
 .timer-label,
 .btn {
-	font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	font-family:
+		'Manrope',
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		sans-serif;
 }
 
-html{
-	background-image: linear-gradient(
-			rgba(255, 255, 255, 0.4),
-			rgba(255, 255, 255, 0.4)
-		),
+html {
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
 		url('/img/main-bg.jpg');
 	background-size: cover;
 	background-position: center;
