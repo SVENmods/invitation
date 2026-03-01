@@ -21,7 +21,11 @@ $env-max-height: 340px;
      border-bottom-right-radius: $env-border-radius;
      margin-left: auto;
      margin-right: auto;
-     background-color: $color-flap;
+     // background-color: $color-flap;
+     background-image: url('/img/white-smooth-textured-paper-background.jpg');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
      box-shadow: 0 4px 20px rgba(0, 0, 0, .18);
      transition: box-shadow .3s ease, transform .3s ease;
 }
@@ -33,25 +37,35 @@ $env-max-height: 340px;
 
 .front {
      position: absolute;
-     width: 0;
-     height: 0;
+     inset: 0;
+     width: 100%;
+     height: 100%;
      z-index: 3;
 }
 
+.pocket {
+     position: absolute;
+     inset: 0;
+     background-image: url('/img/white-smooth-textured-paper-background.jpg');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+}
+
 .flap {
-     border-left: calc(var(--env-width) / 2) solid transparent;
-     border-right: calc(var(--env-width) / 2) solid transparent;
-     border-bottom: calc(var(--env-height) / 2 - 8px) solid transparent;
-     border-top: calc(var(--env-height) / 2 + 8px) solid $color-flap;
+     clip-path: polygon(0 0, 100% 0, 50% 52%);
+     position: absolute;
+     inset: 0;
+     background-image: url('/img/main-bg.jpg');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
      transform-origin: top;
      pointer-events: none;
 }
 
 .pocket {
-     border-left: calc(var(--env-width) / 2) solid $color-env;
-     border-right: calc(var(--env-width) / 2) solid $color-env;
-     border-bottom: calc(var(--env-height) / 2) solid $color-env;
-     border-top: calc(var(--env-height) / 2) solid transparent;
+     clip-path: polygon(0 100%, 0 0, 50% 50%, 100% 0, 100% 100%);
      border-bottom-left-radius: $env-border-radius;
      border-bottom-right-radius: $env-border-radius;
 }
