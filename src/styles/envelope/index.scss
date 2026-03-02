@@ -50,19 +50,22 @@ $env-max-height: 340px;
      background-size: cover;
      background-position: center;
      background-repeat: no-repeat;
+     filter: brightness(1.17);
 }
 
 .flap {
      clip-path: polygon(0 0, 100% 0, 50% 52%);
      position: absolute;
      inset: 0;
-     background-image: url('/img/main-bg.jpg');
+     background-image: url('/img/white-smooth-textured-paper-background.jpg');
      background-size: cover;
      background-position: center;
      background-repeat: no-repeat;
      transform-origin: top;
      pointer-events: none;
+     filter: brightness(1.14);
 }
+
 
 .pocket {
      clip-path: polygon(0 100%, 0 0, 50% 50%, 100% 0, 100% 100%);

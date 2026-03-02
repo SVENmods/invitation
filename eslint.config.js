@@ -51,4 +51,12 @@ export default defineConfig([
 		language: 'css/css',
 		extends: ['css/recommended'],
 	},
+	{
+		"plugins": [
+			"react"
+		],
+		"rules": {
+			"react/prop-types": 0
+		}
+	}
 ])
