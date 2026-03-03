@@ -17,7 +17,8 @@ const Location = () => {
 				<div className="w-full max-w-3xl mx-auto rounded-[18px] md:rounded-[22px] overflow-hidden border border-(--color-border)/70 bg-white/70 shadow-soft">
 					<a href="https://yandex.com/maps/-/CPqrmFN3"
 						target="_blank"
-						rel="noreferrer">
+						rel="noreferrer"
+					>
 						<img
 							src="/img/location.png"
 							alt="Иллюстрация усадьбы Wooden Villa, место проведения праздника"

@@ -11,11 +11,15 @@
     "deploy": "gh-pages -b build -d dist"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
     "@tailwindcss/vite": "^4.2.1",
     "classnames": "^2.5.1",
+    "postcss": "^8.5.8",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "tailwindcss": "^4.2.1"
+    "react-hook-form": "^7.71.2",
+    "tailwindcss": "^4.2.1",
+    "web-haptics": "^0.0.6"
   },
   "devDependencies": {
     "@eslint/css": "^0.14.1",

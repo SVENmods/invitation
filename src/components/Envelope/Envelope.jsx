@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import '../../styles/envelope/index.scss'
 import cls from 'classnames'
 import LetterContent from './LetterContent'
+import { useWebHaptics } from 'web-haptics/react'
 
 const Envelope = () => {
 	const [isOpen, setIsOpen] = useState(false)
@@ -9,11 +10,17 @@ const Envelope = () => {
 	const [isLetterExpanded, setIsLetterExpanded] = useState(false)
 	const expandTimerRef = useRef(null)
 	const closeTimerRef = useRef(null)
+	const { trigger } = useWebHaptics()
 
 	const handleOpenEnvelope = () => {
 		if (isLetterMounted) return
 
 		setIsOpen(true)
+
+		trigger([
+			{ duration: 1000 },
+		], { intensity: 1 })
+
 
 		if (expandTimerRef.current) {
 			clearTimeout(expandTimerRef.current)
@@ -59,12 +66,10 @@ const Envelope = () => {
 
 	return (
 		<>
-
-
 			<div className="relative flex flex-col items-center gap-8 md:gap-10 w-full">
 				<button
 					type="button"
-					className="rounded-sm outline-none focus-visible:ring-blue-400 focus-visible:ring-2 focus-visible:ring-offset-(--color-bg) focus-visible:ring-offset-2"
+					className="rounded-sm outline-none focus-visible:ring-blue-400 focus-visible:ring-2 focus-visible:ring-offset-(--color-bg) focus-visible:ring-offset-2 cursor-pointer"
 					onClick={handleOpenEnvelope}
 					aria-label="Открыть приглашение"
 				>
@@ -89,13 +94,9 @@ const Envelope = () => {
 						>
 							<LetterContent />
 						</div>
-						<div
-							className="modal-backdrop"
-						></div>
 					</div>
 				)}
 			</div>
-
 
 			{isLetterMounted && (
 				<button
