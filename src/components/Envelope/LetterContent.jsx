@@ -23,11 +23,11 @@ const LetterContent = () => {
 			<div className="flex flex-col gap-6 md:gap-8 space-y-6 md:space-y-8">
 
 				<div className="w-full">
-					<Location />
+					<DateCounter className="" />
 				</div>
 
 				<div className="w-full">
-					<DateCounter className="" />
+					<Location />
 				</div>
 
 				<div className="w-full">
