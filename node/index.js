@@ -1,14 +1,27 @@
-// server.mjs
-import { createServer } from 'node:http';
+import nodemailer from "nodemailer";
 
-const server = createServer((req, res) => {
-	res.writeHead(200, { 'Content-Type': 'text/plain' });
-	res.end('Hello World1231!\n');
+
+// Create a transporter using Ethereal test credentials.
+// For production, replace with your actual SMTP server details.
+const transporter = nodemailer.createTransport({
+	host: "smtp.ethereal.email",
+	port: 587,
+	secure: false, // Use true for port 465, false for port 587
+	auth: {
+		user: "maddison53@ethereal.email",
+		pass: "jn7jnAPss4f63QBp6D",
+	},
 });
 
-// starts a simple http server locally on port 3000
-server.listen(3000, '127.0.0.1', () => {
-	console.log('Listening on 127.0.0.1:3000');
-});
+// Send an email using async/await
+(async () => {
+	const info = await transporter.sendMail({
+		from: '"Maddison Foo Koch" <maddison53@ethereal.email>',
+		to: "bar@example.com, baz@example.com",
+		subject: "Hello ✔",
+		text: "Hello world?", // Plain-text version of the message
+		html: "<b>Hello world?</b>", // HTML version of the message
+	});
 
-// run with `node server.mjs`
+	console.log("Message sent:", info.messageId);
+})();

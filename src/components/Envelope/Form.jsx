@@ -213,12 +213,12 @@ const Form = () => {
 					<>
 						{/* Количество гостей и дополнительные поля */}
 						<div className="space-y-3 md:space-y-4">
-							<p className="font-body text-sm md:text-base text-(--color-ink)">
+							<p className="font-body text-sm md:text-base  text-(--color-ink)">
 								Количество гостей
 							</p>
 							<div className="w-full max-w-xs">
 								<select
-									className="select select-bordered w-full font-body text-sm md:text-base border-(--color-border) focus:outline-none focus:border-(--color-ink)"
+									className="select select-ghost w-full font-body text-sm md:text-base border-(--color-border)  focus:border-(--color-border) focus:outline-none "
 									{...register('guestCount', {
 										required: 'Укажите количество гостей',
 										validate: (value) => {
@@ -230,7 +230,7 @@ const Form = () => {
 									})}
 								>
 									{[1, 2, 3, 4, 5].map((n) => (
-										<option key={n} value={n}>
+										<option key={n} value={n} >
 											{n}
 										</option>
 									))}
