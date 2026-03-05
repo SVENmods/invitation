@@ -32,7 +32,7 @@ const Steps = () => {
 									15:00
 								</p>
 							</div>
-							<div className="m-0 divider divider-horizontal divider-start" >🥂</div>
+							<div className="m-0 text-2xl divider divider-horizontal divider-start" >👥</div>
 							<div className="flex-1 space-y-2">
 								<p className="font-ui text-[0.65rem] md:text-xs tracking-[0.22em] uppercase text-(--color-ink-muted)">
 									Сбор гостей и начало фуршета
@@ -50,7 +50,7 @@ const Steps = () => {
 									15:45
 								</p>
 							</div>
-							<div className="m-0 divider divider-horizontal divider-start" > 💍</div>
+							<div className="m-0 text-2xl divider divider-horizontal divider-start" > 💍</div>
 							<div className="flex-1 space-y-2">
 								<p className="font-ui text-[0.65rem] md:text-xs tracking-[0.22em] uppercase text-(--color-ink-muted)">
 									Выездная регистрация
@@ -68,7 +68,7 @@ const Steps = () => {
 									17:00
 								</p>
 							</div>
-							<div className="m-0 divider divider-horizontal divider-start" > 🍽️</div>
+							<div className="m-0 text-2xl divider divider-horizontal divider-start" > 🍽️</div>
 							<div className="flex-1 space-y-2">
 								<p className="font-ui text-[0.65rem] md:text-xs tracking-[0.22em] uppercase text-(--color-ink-muted)">
 									Начало банкета
@@ -86,7 +86,7 @@ const Steps = () => {
 									23:00
 								</p>
 							</div>
-							<div className="m-0 divider divider-horizontal divider-start" > 🌙</div>
+							<div className="m-0 text-2xl divider divider-horizontal divider-start" > 🌙</div>
 							<div className="flex-1 space-y-2">
 								<p className="font-ui text-[0.65rem] md:text-xs tracking-[0.22em] uppercase text-(--color-ink-muted)">
 									Финал вечера

@@ -16,9 +16,13 @@ const Form = () => {
 			firstName: '',
 			lastName: '',
 			attendance: '',
-			guestCount: 1,
-			extraGuests: [],
+			withPartner: false,
+			partner: {
+				firstName: '',
+				lastName: '',
+			},
 			drinks: [],
+			partnerDrinks: [],
 			transferTo: '',
 			transferBack: '',
 			message: '',
@@ -29,31 +33,35 @@ const Form = () => {
 	})
 
 	const attendance = watch('attendance')
-	const guestCount = watch('guestCount') || 1
+	const withPartner = watch('withPartner') || false
 
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [submitError, setSubmitError] = useState('')
 	const [showSuccessModal, setShowSuccessModal] = useState(false)
 
 	const buildPayload = (values) => {
-		if (values.attendance !== 'yes') {
-			return {
-				firstName: values.firstName,
-				lastName: values.lastName,
-				attendance: values.attendance,
-				message: values.message || '',
-			}
+		const base = {
+			firstName: values.firstName,
+			lastName: values.lastName,
+			attendance: values.attendance,
+			message: values.message || '',
 		}
 
-		const count = Number(guestCount) || 1
+		if (values.attendance !== 'yes') return base
+
+		const isWithPartner = Boolean(values.withPartner)
 
 		return {
-			...values,
-			guestCount: count,
-			extraGuests:
-				count > 1 && Array.isArray(values.extraGuests)
-					? values.extraGuests.slice(0, count - 1)
+			...base,
+			withPartner: isWithPartner,
+			...(isWithPartner ? { partner: values.partner } : {}),
+			drinks: Array.isArray(values.drinks) ? values.drinks : [],
+			partnerDrinks:
+				isWithPartner && Array.isArray(values.partnerDrinks)
+					? values.partnerDrinks
 					: [],
+			transferTo: values.transferTo || '',
+			transferBack: values.transferBack || '',
 		}
 	}
 
@@ -98,70 +106,69 @@ const Form = () => {
 		}
 	}
 
-	const renderExtraGuestFields = () => {
-		const count = Number(guestCount) || 1
-		if (count <= 1) return null
-
-		const extra = []
-		for (let i = 2; i <= count; i += 1) {
-			const index = i - 2
-			extra.push(
-				<div key={i} className="gap-4 grid grid-cols-1 md:grid-cols-2">
-					<div className="space-y-1">
-						<label className="font-body text-xs md:text-sm text-(--color-ink)">
-							Имя гостя {i}
-						</label>
-						<input
-							type="text"
-							className="w-full border-b border-(--color-border) bg-transparent px-1 py-1 font-body text-sm md:text-base focus:outline-none focus:border-(--color-ink)"
-							{...register(`extraGuests.${index}.firstName`, {
-								required: 'Введите имя гостя',
-								pattern: {
-									value: namePattern,
-									message: 'Допустимы только буквы, пробел, дефис и апостроф',
-								},
-							})}
-							placeholder='Имя'
-						/>
-						{errors.extraGuests?.[index]?.firstName && (
-							<p className="mt-1 text-red-500 text-xs">
-								{errors.extraGuests[index].firstName.message}
-							</p>
-						)}
-					</div>
-
-					<div className="space-y-1">
-						<label className="font-body text-xs md:text-sm text-(--color-ink)">
-							Фамилия гостя {i}
-						</label>
-						<input
-							type="text"
-							className="w-full border-b border-(--color-border) bg-transparent px-1 py-1 font-body text-sm md:text-base focus:outline-none focus:border-(--color-ink)"
-							{...register(`extraGuests.${index}.lastName`, {
-								required: 'Введите фамилию гостя',
-								pattern: {
-									value: namePattern,
-									message: 'Допустимы только буквы, пробел, дефис и апостроф',
-								},
-							})}
-							placeholder='Фамилия'
-						/>
-						{errors.extraGuests?.[index]?.lastName && (
-							<p className="mt-1 text-red-500 text-xs">
-								{errors.extraGuests[index].lastName.message}
-							</p>
-						)}
-					</div>
-				</div>
-			)
-		}
+	const renderPartnerFields = () => {
+		if (!withPartner) return null
 
 		return (
 			<div className="space-y-3 md:space-y-4 mt-4">
 				<p className="font-body text-xs md:text-sm text-(--color-ink-muted)">
-					Пожалуйста, укажите имена и фамилии дополнительных гостей.
+					Пожалуйста, укажите имя и фамилию партнера.
 				</p>
-				<div className="space-y-4 md:space-y-5">{extra}</div>
+				<div className="gap-4 grid grid-cols-1 md:grid-cols-2">
+					<div className="space-y-1">
+						<label className="font-body text-xs md:text-sm text-(--color-ink)">
+							Имя партнера
+						</label>
+						<input
+							type="text"
+							className="w-full border-b border-(--color-border) bg-transparent px-1 py-1 font-body text-sm md:text-base focus:outline-none focus:border-(--color-ink)"
+							{...register('partner.firstName', {
+								required: 'Введите имя партнера',
+								maxLength: {
+									value: 100,
+									message: 'Имя партнера не должно превышать 100 символов',
+								},
+								pattern: {
+									value: namePattern,
+									message: 'Допустимы только буквы, пробел, дефис и апостроф',
+								},
+							})}
+							placeholder="Имя"
+						/>
+						{errors.partner?.firstName && (
+							<p className="mt-1 text-red-500 text-xs">
+								{errors.partner.firstName.message}
+							</p>
+						)}
+					</div>
+
+					<div className="space-y-1">
+						<label className="font-body text-xs md:text-sm text-(--color-ink)">
+							Фамилия партнера
+						</label>
+						<input
+							type="text"
+							className="w-full border-b border-(--color-border) bg-transparent px-1 py-1 font-body text-sm md:text-base focus:outline-none focus:border-(--color-ink)"
+							{...register('partner.lastName', {
+								required: 'Введите фамилию партнера',
+								maxLength: {
+									value: 100,
+									message: 'Фамилия партнера не должна превышать 100 символов',
+								},
+								pattern: {
+									value: namePattern,
+									message: 'Допустимы только буквы, пробел, дефис и апостроф',
+								},
+							})}
+							placeholder="Фамилия"
+						/>
+						{errors.partner?.lastName && (
+							<p className="mt-1 text-red-500 text-xs">
+								{errors.partner.lastName.message}
+							</p>
+						)}
+					</div>
+				</div>
 			</div>
 		)
 	}
@@ -178,7 +185,7 @@ const Form = () => {
 			</div>
 
 			{showSuccessModal ? (
-				<div className="flex flex-col items-center justify-center gap-4 md:gap-5 pt-2 md:pt-4">
+				<div className="flex flex-col justify-center items-center gap-4 md:gap-5 pt-2 md:pt-4">
 					<div className="inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full border border-(--color-border) text-(--color-ink)">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -186,7 +193,7 @@ const Form = () => {
 							viewBox="0 0 24 24"
 							strokeWidth={1.3}
 							stroke="currentColor"
-							className="w-6 h-6 md:w-7 md:h-7"
+							className="w-6 md:w-7 h-6 md:h-7"
 							aria-hidden="true"
 						>
 							<path
@@ -196,7 +203,7 @@ const Form = () => {
 							/>
 						</svg>
 					</div>
-					<div className="space-y-2 md:space-y-3 text-center max-w-md mx-auto">
+					<div className="space-y-2 md:space-y-3 mx-auto max-w-md text-center">
 						<p className="font-display text-xl md:text-2xl tracking-[0.08em] uppercase text-(--color-ink)">
 							Сообщение отправлено
 						</p>
@@ -220,6 +227,10 @@ const Form = () => {
 									className="w-full border-b border-(--color-border) bg-transparent px-1 py-1 font-body text-sm md:text-base focus:outline-none focus:border-(--color-ink)"
 									{...register('firstName', {
 										required: 'Введите имя',
+										maxLength: {
+											value: 100,
+											message: 'Имя не должно превышать 100 символов',
+										},
 										pattern: {
 											value: namePattern,
 											message: 'Допустимы только буквы, пробел, дефис и апостроф',
@@ -241,6 +252,10 @@ const Form = () => {
 									className="w-full border-b border-(--color-border) bg-transparent px-1 py-1 font-body text-sm md:text-base focus:outline-none focus:border-(--color-ink)"
 									{...register('lastName', {
 										required: 'Введите фамилию',
+										maxLength: {
+											value: 100,
+											message: 'Фамилия не должна превышать 100 символов',
+										},
 										pattern: {
 											value: namePattern,
 											message: 'Допустимы только буквы, пробел, дефис и апостроф',
@@ -288,38 +303,49 @@ const Form = () => {
 					{/* Поля, которые показываем только если гость придёт */}
 					{attendance === 'yes' && (
 						<>
-							{/* Количество гостей и дополнительные поля */}
+							{/* Партнер */}
 							<div className="space-y-3 md:space-y-4">
-								<p className="font-body text-sm md:text-base  text-(--color-ink)">
-									Количество гостей
-								</p>
-								<div className="w-full max-w-xs">
-									<select
-										className="select select-ghost w-full font-body text-sm md:text-base border-(--color-border)  focus:border-(--color-border) focus:outline-none "
-										{...register('guestCount', {
-											required: 'Укажите количество гостей',
-											validate: (value) => {
-												const num = Number(value)
-												if (!num || Number.isNaN(num)) return 'Некорректное значение'
-												if (num < 1 || num > 5) return 'Допустимо от 1 до 5 гостей'
-												return true
-											},
-										})}
-									>
-										{[1, 2, 3, 4, 5].map((n) => (
-											<option key={n} value={n}>
-												{n}
-											</option>
-										))}
-									</select>
-									{errors.guestCount && (
-										<p className="mt-1 text-red-500 text-xs">
-											{errors.guestCount.message}
-										</p>
-									)}
+								<div className="flex flex-col gap-4">
+									<p className="font-body text-sm md:text-base text-(--color-ink)">
+										Приду с партнером
+									</p>
+									<label className="text-(--color-ink) toggle">
+										<input type="checkbox" {...register('withPartner')} />
+										<svg
+											aria-label="disabled"
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											strokeWidth="4"
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											className=''
+										>
+											<path d="M18 6 6 18" />
+											<path d="m6 6 12 12" />
+										</svg>
+										<svg
+											aria-label="enabled"
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 24 24"
+										>
+											<g
+												strokeLinejoin="round"
+												strokeLinecap="round"
+												strokeWidth="4"
+												fill="none"
+												stroke="currentColor"
+												className=''
+											>
+												<path d="M20 6 9 17l-5-5"></path>
+											</g>
+										</svg>
+
+									</label>
 								</div>
 
-								{renderExtraGuestFields()}
+								{renderPartnerFields()}
 							</div>
 
 							{/* Предпочтения по напиткам */}
@@ -354,6 +380,43 @@ const Form = () => {
 									<p className="mt-1 text-red-500 text-xs">{errors.drinks.message}</p>
 								)}
 							</div>
+
+							{/* Предпочтения по напиткам партнера */}
+							{withPartner && (
+								<div className="space-y-3 md:space-y-4">
+									<p className="font-body text-sm md:text-base text-(--color-ink)">
+										Предпочтения по напиткам партнера
+									</p>
+									<div className="flex flex-wrap gap-3 md:gap-4">
+										{['Вино игристое', 'Шампанское', 'Виски', 'Водка', 'Безалкогольное'].map(
+											(label) => (
+												<label
+													key={label}
+													className="inline-flex items-center gap-2 font-body text-xs md:text-sm text-(--color-ink)"
+												>
+													<input
+														type="checkbox"
+														value={label}
+														className="rounded-[3px] checkbox checkbox-sm"
+														{...register('partnerDrinks', {
+															validate: (value) =>
+																value && value.length > 0
+																	? true
+																	: 'Выберите хотя бы один вариант',
+														})}
+													/>
+													<span>{label}</span>
+												</label>
+											)
+										)}
+									</div>
+									{errors.partnerDrinks && (
+										<p className="mt-1 text-red-500 text-xs">
+											{errors.partnerDrinks.message}
+										</p>
+									)}
+								</div>
+							)}
 
 							{/* Трансфер */}
 							<div className="gap-6 md:gap-8 grid grid-cols-1 md:grid-cols-2">

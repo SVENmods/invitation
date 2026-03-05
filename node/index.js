@@ -32,6 +32,16 @@ app.post("/node", async (req, res) => {
 	}
 
 	const isAttending = data.attendance === "yes";
+	const withPartner = Boolean(data.withPartner);
+	const partnerFirstName = data?.partner?.firstName || "";
+	const partnerLastName = data?.partner?.lastName || "";
+
+	if (isAttending && withPartner && (!partnerFirstName || !partnerLastName)) {
+		return res.status(400).json({
+			success: false,
+			message: "Укажите имя и фамилию партнера.",
+		});
+	}
 
 	const subject = `RSVP: ${data.firstName} ${data.lastName} — ${isAttending ? "придёт" : "не придёт"
 		}`;
@@ -48,15 +58,12 @@ app.post("/node", async (req, res) => {
 	}
 
 	if (isAttending) {
-		lines.push("", `Количество гостей: ${data.guestCount || 1}`);
-
-		if (Array.isArray(data.extraGuests) && data.extraGuests.length > 0) {
-			lines.push("", "Дополнительные гости:");
-			data.extraGuests.forEach((guest, index) => {
-				lines.push(
-					`${index + 2}. ${guest.firstName || ""} ${guest.lastName || ""}`.trim()
-				);
-			});
+		lines.push("", `Приду с партнером: ${withPartner ? "да" : "нет"}`);
+		if (withPartner) {
+			lines.push(`Партнер: ${`${partnerFirstName} ${partnerLastName}`.trim()}`);
+			if (Array.isArray(data.partnerDrinks) && data.partnerDrinks.length > 0) {
+				lines.push("", `Напитки партнера: ${data.partnerDrinks.join(", ")}`);
+			}
 		}
 
 		if (Array.isArray(data.drinks) && data.drinks.length > 0) {
