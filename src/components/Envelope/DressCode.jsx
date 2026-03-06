@@ -5,9 +5,9 @@ const DressCode = () => {
 				<h2 className="font-display text-3xl md:text-4xl lg:text-[3.25rem] tracking-[0.08em] uppercase text-(--color-ink)">
 					Дресс-код
 				</h2>
-				<p className="font-ui text-[0.55rem] md:text-xs tracking-[0.24em] uppercase text-(--color-ink-muted) text-center">
+				{/* <p className="font-ui text-[0.55rem] md:text-xs tracking-[0.24em] uppercase text-(--color-ink-muted) text-center">
 					нам будет особенно приятно, если вы поддержите атмосферу вечера
-				</p>
+				</p> */}
 
 			</div>
 
@@ -41,8 +41,7 @@ const DressCode = () => {
 					<div className="space-y-3 mt-auto pt-4 md:pt-6">
 						<div className="divider" />
 						<p className="font-body text-xs md:text-sm text-(--color-ink-muted) leading-relaxed max-w-xl">
-							Пожалуйста, избегайте ярких неоновых цветов и крупных принтов — так все гости будут выглядеть
-							гармонично на общих фотографиях.
+							Для нас главное - ваше присутствие! Но нам будет приятно, если в своих нарядах вы поддержите цветовую гамму нашей свадьбы.
 						</p>
 					</div>
 				</div>

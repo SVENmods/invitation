@@ -111,7 +111,7 @@ const Envelope = () => {
 				{isLetterMounted && (
 					<div className={cls('modal modal-middle', isLetterExpanded && 'modal-open')}>
 						<div
-							className="modal-box max-w-[1440px] w-full p-0 bg-(--color-surface) border border-(--color-border) shadow-(--shadow-card)"
+							className="modal-box max-w-[1240px] w-full p-0 bg-(--color-surface) border border-(--color-border) shadow-(--shadow-card)"
 							onClick={(event) => event.stopPropagation()}
 						>
 							<LetterContent />

@@ -4,6 +4,7 @@ import Steps from './Steps';
 import DressCode from './DressCode';
 import Form from './Form';
 import WelcomeBlock from './WelcomeBlock';
+import GuestText from './GuestText';
 
 const LetterContent = () => {
 	return (
@@ -15,7 +16,7 @@ const LetterContent = () => {
 				</div>
 
 				<div className="w-full">
-					<DateCounter className="" />
+					<GuestText />
 				</div>
 
 				<div className="w-full">

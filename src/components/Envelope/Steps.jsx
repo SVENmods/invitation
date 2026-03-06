@@ -35,11 +35,10 @@ const Steps = () => {
 							<div className="m-0 text-2xl divider divider-horizontal divider-start" >👥</div>
 							<div className="flex-1 space-y-2">
 								<p className="font-ui text-[0.65rem] md:text-xs tracking-[0.22em] uppercase text-(--color-ink-muted)">
-									Сбор гостей и начало фуршета
+									Сбор гостей
 								</p>
 								<p className="font-body text-xs md:text-sm text-(--color-ink-muted) leading-relaxed max-w-sm">
-									С этого момента начинается наш праздник: лёгкий фуршет, бокал игристого и первые тёплые объятия.
-									Мы будем очень рады каждому гостю.
+									С этого момента начинается наш праздник. Время пролетит незаметно за игристым и общением с другими гостями
 								</p>
 							</div>
 						</div>
@@ -53,11 +52,10 @@ const Steps = () => {
 							<div className="m-0 text-2xl divider divider-horizontal divider-start" > 💍</div>
 							<div className="flex-1 space-y-2">
 								<p className="font-ui text-[0.65rem] md:text-xs tracking-[0.22em] uppercase text-(--color-ink-muted)">
-									Выездная регистрация
+									Церемония
 								</p>
 								<p className="font-body text-xs md:text-sm text-(--color-ink-muted) leading-relaxed max-w-sm">
-									Под звуки музыки мы обменяемся клятвами и кольцами.
-									Пусть рядом будут ваши улыбки, поддержка и немного счастливых слёз.
+									Вы станете свидетелями трогательного момента. Приготовьте платочки.
 								</p>
 							</div>
 						</div>
@@ -74,9 +72,7 @@ const Steps = () => {
 									Начало банкета
 								</p>
 								<p className="font-body text-xs md:text-sm text-(--color-ink-muted) leading-relaxed max-w-sm">
-									Мы соберёмся за одним большим столом, чтобы поднять первые тосты.
-									Будет много смеха, тёплых слов, вкусных блюд и душевных разговоров.
-								</p>
+									Будет много танцев, веселья и, конечно, любви.								</p>
 							</div>
 						</div>
 
@@ -89,7 +85,7 @@ const Steps = () => {
 							<div className="m-0 text-2xl divider divider-horizontal divider-start" > 🌙</div>
 							<div className="flex-1 space-y-2">
 								<p className="font-ui text-[0.65rem] md:text-xs tracking-[0.22em] uppercase text-(--color-ink-muted)">
-									Финал вечера
+									Окончание вечера
 								</p>
 								<p className="font-body text-xs md:text-sm text-(--color-ink-muted) leading-relaxed max-w-sm">
 									Финальные танцы, объятия и слова благодарности.

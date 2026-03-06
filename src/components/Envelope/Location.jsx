@@ -9,7 +9,7 @@ const Location = () => {
 					Место проведения
 				</p>
 				<p className="font-body text-base md:text-lg text-(--color-ink) mt-2">
-					Wooden Villa, agragaradok Kalodzishchy, Uzliesnaja vulica, 58, Belarus
+					Wooden Villa, агрогородок Колодищи, Узлесная ул., 58, Беларусь
 				</p>
 			</div>
 

@@ -133,7 +133,7 @@ const Form = () => {
 									message: 'Допустимы только буквы, пробел, дефис и апостроф',
 								},
 							})}
-							placeholder="Имя"
+							placeholder="Мария"
 						/>
 						{errors.partner?.firstName && (
 							<p className="mt-1 text-red-500 text-xs">
@@ -179,8 +179,9 @@ const Form = () => {
 				<h2 className="font-display text-3xl md:text-4xl lg:text-[3.25rem] tracking-[0.08em] uppercase text-(--color-ink)">
 					Ответ на приглашение
 				</h2>
-				<p className="font-ui text-[0.55rem] md:text-xs tracking-[0.24em] uppercase text-(--color-ink-muted) text-center">
-					Ждём вашего ответа
+				<p class="font-body text-sm md:text-base text-(--color-ink-muted) leading-relaxed max-w-xl text-left">
+					А еще мы очень хотим, чтобы у вас остались самые лучшие воспоминания о нашей свадьбе. Поэтому, просим вас заполнить анкету ниже
+					Будем ждать вашего ответа.
 				</p>
 			</div>
 
@@ -236,7 +237,7 @@ const Form = () => {
 											message: 'Допустимы только буквы, пробел, дефис и апостроф',
 										},
 									})}
-									placeholder="Имя"
+									placeholder="Мария"
 								/>
 								{errors.firstName && (
 									<p className="mt-1 text-red-500 text-xs">{errors.firstName.message}</p>
@@ -421,9 +422,14 @@ const Form = () => {
 							{/* Трансфер */}
 							<div className="gap-6 md:gap-8 grid grid-cols-1 md:grid-cols-2">
 								<div className="space-y-3 md:space-y-4">
-									<p className="font-body text-sm md:text-base text-(--color-ink)">
-										Трансфер к площадке
-									</p>
+									<div className="">
+										<p className="font-body text-sm md:text-base text-(--color-ink)">
+											Трансфер к площадке
+										</p>
+										<p class="font-body text-xs text-(--color-ink-muted) leading-relaxed max-w-xl">
+											(Самостоятельно- имеется небольшая парковка на территории площадки)
+										</p>
+									</div>
 									<div className="flex md:flex-row flex-col gap-4">
 										<label className="inline-flex items-center gap-2 font-body text-xs md:text-sm text-(--color-ink)">
 											<input
@@ -456,9 +462,14 @@ const Form = () => {
 								</div>
 
 								<div className="space-y-3 md:space-y-4">
-									<p className="font-body text-sm md:text-base text-(--color-ink)">
-										Трансфер обратно
-									</p>
+									<div className="">
+										<p className="font-body text-sm md:text-base text-(--color-ink)">
+											Трансфер обратно
+										</p>
+										<p class="font-body text-xs text-(--color-ink-muted) leading-relaxed max-w-xl">
+											(Самостоятельно- до станции метро, подробности сможем уточнить позже)
+										</p>
+									</div>
 									<div className="flex md:flex-row flex-col gap-4">
 										<label className="inline-flex items-center gap-2 font-body text-xs md:text-sm text-(--color-ink)">
 											<input
