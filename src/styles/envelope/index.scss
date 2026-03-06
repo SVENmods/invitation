@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use 'sass:math';
 
 $color-env: #E9E3D7;
 $color-env2: color.adjust($color-env, $lightness: -3%);
@@ -8,15 +9,17 @@ $color-bg: color.adjust($color-env, $lightness: 48%);
 $env-border-radius: 6px;
 $env-max-width: 520px;
 $env-max-height: 340px;
+$env-aspect-ratio: math.div($env-max-height, $env-max-width);
 
 .envelope {
      --env-width: min(#{$env-max-width}, calc(100vw - 2rem));
-     --env-height: calc(var(--env-width) * #{$env-max-height} / #{$env-max-width});
      --seal-size: clamp(46px, calc(var(--env-width) * 0.123), 64px);
 
      position: relative;
      width: var(--env-width);
-     height: var(--env-height);
+     aspect-ratio: #{$env-max-width} / #{$env-max-height};
+     height: auto;
+     min-height: calc(var(--env-width) * #{$env-aspect-ratio});
      border-bottom-left-radius: $env-border-radius;
      border-bottom-right-radius: $env-border-radius;
      margin-left: auto;
@@ -74,13 +77,9 @@ $env-max-height: 340px;
 }
 
 .letter {
-     position: relative;
+     position: absolute;
+     inset: 5%;
      background-color: $color-env;
-     width: 90%;
-     margin-left: auto;
-     margin-right: auto;
-     height: 90%;
-     top: 5%;
      border-radius: $env-border-radius;
      box-shadow: 0 2px 26px rgba(0, 0, 0, .12);
 }
@@ -144,7 +143,7 @@ $env-max-height: 340px;
 }
 
 .open .letter {
-     transform: translateY(calc(-1 * var(--env-height) / 3));
+     transform: translateY(calc(-1 * var(--env-width) * #{$env-aspect-ratio} / 3));
      transition: transform .4s .6s ease, z-index .6s;
      z-index: 2;
 }
