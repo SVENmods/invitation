@@ -4,7 +4,7 @@ const Steps = () => {
 
 			<div
 				aria-hidden="true"
-				className="right-[-10%] bottom-[-4%] absolute opacity-10 md:opacity-30 w-2/3 md:w-1/2 lg:w-[38%] h-2/3 md:h-3/4 lg:h-[95%] pointer-events-none select-none"
+				className="right-[-2%] bottom-[-1%] absolute opacity-10 md:opacity-30 w-2/3 md:w-1/2 lg:w-[58%] h-2/3 md:h-3/4 lg:h-[95%] pointer-events-none select-none"
 				style={{
 					backgroundImage: "url('/img/steps-bg.png')",
 					backgroundRepeat: 'no-repeat',
