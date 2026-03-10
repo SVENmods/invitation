@@ -8,15 +8,18 @@ $color-bg: color.adjust($color-env, $lightness: 48%);
 
 $env-border-radius: 6px;
 $env-max-width: 520px;
+$env-open-width: 1440px;
 $env-max-height: 340px;
 $env-aspect-ratio: math.div($env-max-height, $env-max-width);
 
 .envelope {
      --env-width: min(#{$env-max-width}, calc(100vw - 2rem));
-     --seal-size: clamp(46px, calc(var(--env-width) * 0.123), 64px);
+     --env-open-target: min(#{$env-open-width}, calc(100vw - 2rem));
+     --seal-size: clamp(46px, calc(100% * 0.123), 64px);
 
      position: relative;
      width: var(--env-width);
+     max-width: calc(100vw - 2rem);
      aspect-ratio: #{$env-max-width} / #{$env-max-height};
      height: auto;
      min-height: calc(var(--env-width) * #{$env-aspect-ratio});
@@ -30,12 +33,20 @@ $env-aspect-ratio: math.div($env-max-height, $env-max-width);
      background-position: center;
      background-repeat: no-repeat;
      box-shadow: 0 4px 20px rgba(0, 0, 0, .18);
-     transition: box-shadow .3s ease, transform .3s ease;
+     transform: translateY(0) scale(1);
+     transform-origin: top center;
+     transition: width .9s cubic-bezier(.22, .8, .2, 1), box-shadow .55s ease, transform .9s cubic-bezier(.22, .8, .2, 1);
 }
 
-.envelope:hover {
+.envelope:hover:not(.open) {
      box-shadow: 0 12px 32px rgba(0, 0, 0, .2);
-     transform: translateY(-2px);
+     transform: translateY(-2px) scale(1);
+}
+
+.envelope.open {
+     width: var(--env-open-target);
+     transform: translateY(clamp(120px, 28vh, 300px));
+     box-shadow: 0 24px 50px rgba(0, 0, 0, .26);
 }
 
 .front {
@@ -82,6 +93,7 @@ $env-aspect-ratio: math.div($env-max-height, $env-max-width);
      background-color: $color-env;
      border-radius: $env-border-radius;
      box-shadow: 0 2px 26px rgba(0, 0, 0, .12);
+     overflow: hidden;
 }
 
 .letter:after {
@@ -96,33 +108,18 @@ $env-aspect-ratio: math.div($env-max-height, $env-max-width);
                rgba(255, 255, 255, 0.00) 25%,
                rgba(239, 233, 215, 0.7) 55%,
                rgb(239, 233, 215) 100%);
+     pointer-events: none;
 }
 
-.words {
-     position: absolute;
-     left: 10%;
-     width: 80%;
-     height: 14%;
-     background-color: $color-bg;
+.letter-content-wrapper {
+     position: relative;
+     z-index: 1;
+     width: 100%;
+     height: 100%;
+     overflow-y: auto;
+     overflow-x: hidden;
 }
 
-.words.line1 {
-     top: 15%;
-     width: 20%;
-     height: 7%;
-}
-
-.words.line2 {
-     top: 30%;
-}
-
-.words.line3 {
-     top: 50%;
-}
-
-.words.line4 {
-     top: 70%;
-}
 
 .open .flap {
      transform: rotateX(180deg);
@@ -137,15 +134,27 @@ $env-aspect-ratio: math.div($env-max-height, $env-max-width);
 }
 
 .close .letter {
-     transform: translateY(0px);
-     transition: transform .4s ease, z-index 1s;
+     transform: translateY(0);
+     transition: transform .45s ease, z-index 1s;
      z-index: 1;
 }
 
 .open .letter {
-     transform: translateY(calc(-1 * var(--env-width) * #{$env-aspect-ratio} / 3));
-     transition: transform .4s .6s ease, z-index .6s;
+     left: 4%;
+     right: 4%;
+     top: 4%;
+     bottom: auto;
+     height: clamp(460px, 72vh, 860px);
+     transform: translateY(calc(-1 * (100% - 22%)));
+     transition: height .8s .18s cubic-bezier(.22, .8, .2, 1), transform .8s .18s cubic-bezier(.22, .8, .2, 1), z-index .6s;
      z-index: 2;
+}
+
+.open .letter:after {
+     background-image: linear-gradient(180deg,
+               rgba(255, 255, 255, 0) 78%,
+               rgba(239, 233, 215, 0.24) 92%,
+               rgba(239, 233, 215, 0.45) 100%);
 }
 
 .seal {
