@@ -15,23 +15,23 @@ const GuestText = () => {
 					}}
 				/>
 				<div className="space-y-3 md:space-y-4 mb-8 md:mb-10 text-center">
-					<h2 className="font-display text-3xl md:text-4xl lg:text-[3.25rem] tracking-[0.08em] uppercase text-(--color-ink)">
+					<h2 className="font-display text-3xl md:text-4xl lg:text-[3.25rem] tracking-[0.08em]  text-(--color-ink)">
 						Дорогие родные и близкие!
 					</h2>
 				</div>
 				<div className="flex flex-col items-center text-center">
-					<p class="font-body text-sm md:text-base text-(--color-ink-muted) leading-relaxed max-w-xl">
+					<p className="font-body text-sm md:text-base text-(--color-ink-muted) leading-relaxed max-w-xl">
 						В нашей жизни скоро состоится важное и радостное для нас событие - наша свадьба! Мы вас очень любим и будем счастливы, если вы проведете вместе с нами этот особенный день.
 					</p>
 				</div>
 				<div className="flex flex-col gap-3">
-					<p class="font-ui text-[0.55rem] md:text-xs tracking-[0.24em] uppercase text-(--color-ink-muted) text-center">
+					<p className="font-ui text-[0.55rem] md:text-xs tracking-[0.24em] uppercase text-(--color-ink-muted) text-center">
 						До нашей свадьбы осталось
 					</p>
 					<DateCounter />
 				</div>
 				<div className="text-center">
-					<p class="font-body text-xs md:text-sm text-(--color-ink-muted) leading-relaxed">
+					<p className="font-body text-xs md:text-sm text-(--color-ink-muted) leading-relaxed">
 						Приглашаем вас разделить с нами радость этого дня.
 					</p>
 				</div>
