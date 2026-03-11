@@ -16,16 +16,16 @@ const Steps = () => {
 			<div className="z-1 relative space-y-4 md:space-y-6 text-center">
 				<div className="space-y-3 md:space-y-4 mb-8 md:mb-10">
 					<h2 className="font-display text-3xl md:text-4xl lg:text-[3.25rem] tracking-[0.08em]  text-(--color-ink)">
-						Программа свадебного дня
+						Программа
 					</h2>
 					<p className="font-ui text-[0.55rem] md:text-xs tracking-[0.24em] uppercase text-(--color-ink-muted) text-center">
-						как будет проходить наш праздник
+						свадебного дня
 					</p>
 
 				</div>
 
 				<div className="flex justify-center w-full">
-					<div className="space-y-6 md:space-y-7 lg:space-y-8 w-full max-w-3xl md:max-w-4xl text-left">
+					<div className="space-y-6 md:space-y-7 lg:space-y-8 w-full text-left">
 						<div className="flex items-stretch gap-4 md:gap-6 lg:gap-8">
 							<div className="flex items-start shrink-0">
 								<p className="font-ui text-sm md:text-base lg:text-lg tracking-[0.18em] uppercase text-(--color-ink)">

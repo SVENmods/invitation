@@ -181,7 +181,7 @@ const Form = () => {
 				</h2>
 				<p className="font-body text-sm md:text-base text-(--color-ink-muted) leading-relaxed max-w-xl text-left">
 					А еще мы очень хотим, чтобы у вас остались самые лучшие воспоминания о нашей свадьбе. Поэтому, просим вас заполнить анкету ниже
-					Будем ждать вашего ответа.
+					Будем ждать ответ до 12.06.2026.
 				</p>
 			</div>
 
@@ -237,7 +237,7 @@ const Form = () => {
 											message: 'Допустимы только буквы, пробел, дефис и апостроф',
 										},
 									})}
-									placeholder="Мария"
+									placeholder="Введите имя"
 								/>
 								{errors.firstName && (
 									<p className="mt-1 text-red-500 text-xs">{errors.firstName.message}</p>
@@ -262,7 +262,7 @@ const Form = () => {
 											message: 'Допустимы только буквы, пробел, дефис и апостроф',
 										},
 									})}
-									placeholder="Фамилия"
+									placeholder="Введите фамилию"
 								/>
 								{errors.lastName && (
 									<p className="mt-1 text-red-500 text-xs">{errors.lastName.message}</p>

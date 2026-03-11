@@ -15,28 +15,33 @@ const DressCode = () => {
 				<div className="flex flex-col md:flex-1 justify-between text-left">
 					<div className="space-y-3 md:space-y-4">
 						<p className="font-body text-sm md:text-base text-(--color-ink-muted) leading-relaxed max-w-xl">
-							Выберите для образа спокойные светлые оттенки, которые будут гармонировать с оформлением
-							праздника: молочный, бежевый, светло-голубой, нежно-розовый, серо-голубой.
+							Выберите для образа спокойные темные оттенки, которые будут гармонировать с оформлением
+							праздника: черный, коричневый, светло-кофейный, мятный, зеленый.
 						</p>
 
 						<div className="flex flex-wrap justify-center md:justify-start items-center gap-3 md:gap-4 pt-1">
-							<div className="tooltip-top tooltip" data-tip="Молочный">
-								<span className="inline-block h-6 w-6 rounded-full bg-[#f7f2e8] border border-(--color-border)/50" />
+							<div className="tooltip-top tooltip" data-tip="Черный">
+								<span className="inline-block h-6 w-6 rounded-full bg-[#0f1213] border border-(--color-border)/50" />
 							</div>
-							<div className="tooltip-top tooltip" data-tip="Бежевый">
-								<span className="inline-block h-6 w-6 rounded-full bg-[#ead9c0] border border-(--color-border)/50" />
+							<div className="tooltip-top tooltip" data-tip="Коричневый">
+								<span className="inline-block h-6 w-6 rounded-full bg-[#735c48] border border-(--color-border)/50" />
 							</div>
-							<div className="tooltip-top tooltip" data-tip="Светло-голубой">
-								<span className="inline-block h-6 w-6 rounded-full bg-[#c8d9f2] border border-(--color-border)/50" />
+							<div className="tooltip-top tooltip" data-tip="Светло-кофейный">
+								<span className="inline-block h-6 w-6 rounded-full bg-[#b5a184] border border-(--color-border)/50" />
 							</div>
-							<div className="tooltip-top tooltip" data-tip="Нежно-розовый">
-								<span className="inline-block h-6 w-6 rounded-full bg-[#f5cfd7] border border-(--color-border)/50" />
+							<div className="tooltip-top tooltip" data-tip="Мятный">
+								<span className="inline-block h-6 w-6 rounded-full bg-[#b7d3ba] border border-(--color-border)/50" />
 							</div>
-							<div className="tooltip-top tooltip" data-tip="Серо-голубой">
-								<span className="inline-block h-6 w-6 rounded-full bg-[#c5ced8] border border-(--color-border)/50" />
+							<div className="tooltip-top tooltip" data-tip="Зеленый">
+								<span className="inline-block h-6 w-6 rounded-full bg-[#758a6c] border border-(--color-border)/50" />
 							</div>
 						</div>
 					</div>
+
+					<picture>
+						<source media="(min-width: 1024px)" srcset="/img/dress-code-desktop.png" />
+						<img src="/img/dress-code-mobile.png" alt="Дресс-код" className="block mx-auto w-full max-w-3xl h-auto" />
+					</picture>
 
 					<div className="space-y-3 mt-auto pt-4 md:pt-6">
 						<div className="divider" />
@@ -47,7 +52,7 @@ const DressCode = () => {
 				</div>
 
 
-				<div className="flex justify-center w-full md:w-auto">
+				{/* <div className="flex justify-center w-full md:w-auto">
 					<div className="w-full md:w-auto max-w-xs md:max-w-sm">
 						<div className="w-full rounded-[18px] md:rounded-[22px] overflow-hidden border border-(--color-border)/70 bg-white/70 shadow-soft">
 							<img
@@ -58,7 +63,7 @@ const DressCode = () => {
 							/>
 						</div>
 					</div>
-				</div>
+				</div> */}
 
 			</div>
 		</section>

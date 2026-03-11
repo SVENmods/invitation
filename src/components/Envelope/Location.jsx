@@ -6,15 +6,15 @@ const Location = () => {
 					Локация
 				</h2>
 				<p className="font-ui text-[0.55rem] md:text-xs tracking-[0.24em] uppercase text-(--color-ink-muted) text-center">
-					Здесь состоится наша свадьба
+					Ждем вас по адресу
 				</p>
 				<p className="font-body text-base md:text-lg text-(--color-ink) mt-2">
 					Wooden Villa, агрогородок Колодищи, Узлесная ул., 58, Беларусь
 				</p>
 			</div>
 
-			<div className="flex flex-col items-center gap-8 md:gap-9">
-				<div className="w-full max-w-2xl mx-auto rounded-[18px] md:rounded-[22px] overflow-hidden border border-(--color-border)/70 bg-white/70 shadow-soft">
+			<div className="flex flex-col items-center gap-4 md:gap-6">
+				<div className="w-full max-w-xl mx-auto rounded-[18px] md:rounded-[22px] overflow-hidden border border-(--color-border)/70 bg-white/70 shadow-soft">
 					<a href="https://yandex.com/maps/-/CPqrmFN3"
 						target="_blank"
 						rel="noreferrer"

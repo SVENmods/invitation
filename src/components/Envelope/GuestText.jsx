@@ -25,7 +25,7 @@ const GuestText = () => {
 							В нашей жизни скоро состоится важное и радостное для нас событие - наша свадьба! Мы вас очень любим и будем счастливы, если вы проведете вместе с нами этот особенный день.
 						</p>
 					</div>
-					<div className="flex flex-col items-center gap-3 md:gap-4 mt-6">
+					<div className="flex flex-col items-center gap-3 md:gap-4 mt-12">
 						<div className="flex flex-col items-center gap-2 md:gap-3 text-(--color-ink)">
 							<p className="font-ui text-xs md:text-sm uppercase tracking-[0.22em]">
 								Ию<span className="decoration-2 underline underline-offset-4">ль</span>
