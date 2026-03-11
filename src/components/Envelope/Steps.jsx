@@ -16,7 +16,7 @@ const Steps = () => {
 			<div className="z-1 relative space-y-4 md:space-y-6 text-center">
 				<div className="space-y-3 md:space-y-4 mb-8 md:mb-10">
 					<h2 className="font-display text-3xl md:text-4xl lg:text-[3.25rem] tracking-[0.08em]  text-(--color-ink)">
-						Шаги дня
+						Программа свадебного дня
 					</h2>
 					<p className="font-ui text-[0.55rem] md:text-xs tracking-[0.24em] uppercase text-(--color-ink-muted) text-center">
 						как будет проходить наш праздник
