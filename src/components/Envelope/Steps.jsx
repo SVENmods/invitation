@@ -25,7 +25,7 @@ const Steps = () => {
 				</div>
 
 				<div className="flex justify-center w-full">
-					<div className="space-y-6 md:space-y-7 lg:space-y-8 w-full text-left">
+					<div className="space-y-6 md:space-y-7 lg:space-y-8 w-full max-w-3xl text-left">
 						<div className="flex items-stretch gap-4 md:gap-6 lg:gap-8">
 							<div className="flex items-start shrink-0">
 								<p className="font-ui text-sm md:text-base lg:text-lg tracking-[0.18em] uppercase text-(--color-ink)">

@@ -20,8 +20,8 @@ const GuestText = () => {
 							Дорогие родные и близкие!
 						</h2>
 					</div>
-					<div className="flex flex-col text-left">
-						<p className="font-body text-sm md:text-base text-(--color-ink-muted) leading-relaxed max-w-xl">
+					<div className="flex justify-center text-left">
+						<p className="font-body text-sm md:text-base text-(--color-ink-muted) leading-relaxed max-w-3xl">
 							В нашей жизни скоро состоится важное и радостное для нас событие - наша свадьба! Мы вас очень любим и будем счастливы, если вы проведете вместе с нами этот особенный день.
 						</p>
 					</div>

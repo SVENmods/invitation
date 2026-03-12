@@ -179,10 +179,12 @@ const Form = () => {
 				<h2 className="font-display text-3xl md:text-4xl lg:text-[3.25rem] tracking-[0.08em]  text-(--color-ink)">
 					Ответ на приглашение
 				</h2>
-				<p className="font-body text-sm md:text-base text-(--color-ink-muted) leading-relaxed max-w-xl text-left">
-					А еще мы очень хотим, чтобы у вас остались самые лучшие воспоминания о нашей свадьбе. Поэтому, просим вас заполнить анкету ниже
-					Будем ждать ответ до 12.06.2026.
-				</p>
+				<div className="flex justify-center">
+					<p className="font-body text-sm md:text-base text-(--color-ink-muted) leading-relaxed max-w-3xl text-left">
+						А еще мы очень хотим, чтобы у вас остались самые лучшие воспоминания о нашей свадьбе. Поэтому, просим вас заполнить анкету ниже
+						Будем ждать ответ до 12.06.2026.
+					</p>
+				</div>
 			</div>
 
 			{showSuccessModal ? (
