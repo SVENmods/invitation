@@ -190,7 +190,7 @@ textarea,
 html {
 	background-image:
 		linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-		url('/img/main-bg.jpg');
+		url('/img/main-bg.webp');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;

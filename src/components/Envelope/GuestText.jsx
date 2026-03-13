@@ -14,15 +14,15 @@ const GuestText = () => {
 						backgroundSize: 'contain',
 					}}
 				/>
-				<div className="z-2 relative">
+				<div className="z-2 relative flex flex-col h-full">
 					<div className="space-y-3 md:space-y-4 mb-8 md:mb-10 text-center">
 						<h2 className="font-display text-3xl md:text-4xl lg:text-[3.25rem] tracking-[0.08em]  text-(--color-ink)">
 							Дорогие родные и близкие!
 						</h2>
 					</div>
-					<div className="flex justify-center text-left">
-						<p className="font-body text-sm md:text-base text-(--color-ink-muted) leading-relaxed max-w-3xl">
-							В нашей жизни скоро состоится важное и радостное для нас событие - наша свадьба! Мы вас очень любим и будем счастливы, если вы проведете вместе с нами этот особенный день.
+					<div className="flex justify-center text-justify">
+						<p className="font-body text-sm md:text-lg text-(--color-ink-muted) leading-relaxed max-w-3xl">
+							В нашей жизни скоро состоится важное и радостное для нас событие - день нашей свадьбы! Мы вас очень любим и будем счастливы, если вы проведете вместе с нами этот особенный день.
 						</p>
 					</div>
 					<div className="flex flex-col items-center gap-3 md:gap-4 mt-12">
@@ -64,6 +64,7 @@ const GuestText = () => {
 							До нашей свадьбы осталось
 						</p>
 						<DateCounter /> */}
+
 					</div>
 					{/* <div className="mt-3 text-center">
 						<p className="font-body text-xs md:text-sm text-(--color-ink-muted) leading-relaxed">

@@ -9,7 +9,7 @@ const Location = () => {
 					Ждем вас по адресу
 				</p>
 				<p className="font-body text-base md:text-lg text-(--color-ink) mt-2">
-					Wooden Villa, агрогородок Колодищи, Узлесная ул., 58, Беларусь
+					Агроусадьба "Wooden Villa", агрогородок Колодищи, Узлесная ул., 58, Беларусь
 				</p>
 			</div>
 

@@ -1,4 +1,9 @@
+import cls from 'classnames';
 const Steps = () => {
+	const stepsClasses = {
+		title: 'font-ui md:text-base text-sm tracking-[0.12em] uppercase text-(--color-ink-muted)',
+		text: 'font-body md:text-base text-sm text-(--color-ink-muted) leading-relaxed max-w-md'
+	}
 	return (
 		<section className="relative w-full overflow-hidden bg-white/75 border border-(--color-border)/80 shadow-(--shadow-card) rounded-[24px] md:rounded-[28px] px-4 md:px-10 lg:px-14 py-8 md:py-10 text-center">
 
@@ -34,10 +39,10 @@ const Steps = () => {
 							</div>
 							<div className="m-0 text-2xl divider divider-horizontal divider-start" >👥</div>
 							<div className="flex-1 space-y-2">
-								<p className="font-ui text-[0.65rem] md:text-xs tracking-[0.22em] uppercase text-(--color-ink-muted)">
+								<p className={cls(stepsClasses.title)}>
 									Сбор гостей
 								</p>
-								<p className="font-body text-xs md:text-sm text-(--color-ink-muted) leading-relaxed max-w-sm">
+								<p className={cls(stepsClasses.text)}>
 									С этого момента начинается наш праздник. Время пролетит незаметно за игристым и общением с другими гостями
 								</p>
 							</div>
@@ -51,10 +56,10 @@ const Steps = () => {
 							</div>
 							<div className="m-0 text-2xl divider divider-horizontal divider-start" > 💍</div>
 							<div className="flex-1 space-y-2">
-								<p className="font-ui text-[0.65rem] md:text-xs tracking-[0.22em] uppercase text-(--color-ink-muted)">
+								<p className={cls(stepsClasses.title)}>
 									Церемония
 								</p>
-								<p className="font-body text-xs md:text-sm text-(--color-ink-muted) leading-relaxed max-w-sm">
+								<p className={cls(stepsClasses.text)}>
 									Вы станете свидетелями трогательного момента. Приготовьте платочки.
 								</p>
 							</div>
@@ -68,10 +73,10 @@ const Steps = () => {
 							</div>
 							<div className="m-0 text-2xl divider divider-horizontal divider-start" > 🍽️</div>
 							<div className="flex-1 space-y-2">
-								<p className="font-ui text-[0.65rem] md:text-xs tracking-[0.22em] uppercase text-(--color-ink-muted)">
+								<p className={cls(stepsClasses.title)}>
 									Начало банкета
 								</p>
-								<p className="font-body text-xs md:text-sm text-(--color-ink-muted) leading-relaxed max-w-sm">
+								<p className={cls(stepsClasses.text)}>
 									Будет много танцев, веселья и, конечно, любви.								</p>
 							</div>
 						</div>
@@ -84,10 +89,10 @@ const Steps = () => {
 							</div>
 							<div className="m-0 text-2xl divider divider-horizontal divider-start" > 🌙</div>
 							<div className="flex-1 space-y-2">
-								<p className="font-ui text-[0.65rem] md:text-xs tracking-[0.22em] uppercase text-(--color-ink-muted)">
+								<p className={cls(stepsClasses.title)}>
 									Окончание вечера
 								</p>
-								<p className="font-body text-xs md:text-sm text-(--color-ink-muted) leading-relaxed max-w-sm">
+								<p className={cls(stepsClasses.text)}>
 									Финальные танцы, объятия и слова благодарности.
 									Пусть этот вечер завершится красиво и останется в памяти у каждого надолго.
 								</p>

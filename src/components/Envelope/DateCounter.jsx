@@ -82,28 +82,28 @@ const DateCounter = ({ className }) => {
 			value: timeLeft.days,
 			valueText: String(timeLeft.days).padStart(3, '0'),
 			valueWidthClass: 'w-[3ch]',
-			label: getDeclension(timeLeft.days, ['день', 'дня', 'дней']),
+			label: getDeclension(timeLeft.days, ['День', 'Дня', 'Дней']),
 		},
 		{
 			id: 'hours',
 			value: timeLeft.hours,
 			valueText: String(timeLeft.hours).padStart(2, '0'),
 			valueWidthClass: 'w-[2ch]',
-			label: getDeclension(timeLeft.hours, ['час', 'часа', 'часов']),
+			label: getDeclension(timeLeft.hours, ['Час', 'Часа', 'Часов']),
 		},
 		{
 			id: 'minutes',
 			value: timeLeft.minutes,
 			valueText: String(timeLeft.minutes).padStart(2, '0'),
 			valueWidthClass: 'w-[2ch]',
-			label: getDeclension(timeLeft.minutes, ['минута', 'минуты', 'минут']),
+			label: getDeclension(timeLeft.minutes, ['Минута', 'Минуты', 'Минут']),
 		},
 		{
 			id: 'seconds',
 			value: timeLeft.seconds,
 			valueText: String(timeLeft.seconds).padStart(2, '0'),
 			valueWidthClass: 'w-[2ch]',
-			label: getDeclension(timeLeft.seconds, ['секунда', 'секунды', 'секунд']),
+			label: getDeclension(timeLeft.seconds, ['Секунда', 'Секунды', 'Секунд']),
 		},
 	]
 
@@ -127,7 +127,7 @@ const DateCounter = ({ className }) => {
 								>
 									{block.valueText}
 								</span>
-								<span className="mt-2 font-ui text-[0.6rem] md:text-[0.7rem] tracking-[0.24em] uppercase text-(--color-ink-muted) whitespace-nowrap">
+								<span className="mt-2 font-ui text-xs md:text-sm tracking-[0.24em]  text-(--color-ink-muted) whitespace-nowrap">
 									{block.label}
 								</span>
 							</div>

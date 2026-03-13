@@ -177,12 +177,15 @@ const Form = () => {
 		<section className="w-full bg-white/75 border border-(--color-border)/80 shadow-(--shadow-card) rounded-[24px] md:rounded-[28px] px-4 md:px-10 lg:px-14 py-8 md:py-10">
 			<div className="space-y-3 md:space-y-4 mb-8 md:mb-10 text-center">
 				<h2 className="font-display text-3xl md:text-4xl lg:text-[3.25rem] tracking-[0.08em]  text-(--color-ink)">
-					Ответ на приглашение
+					Анкета
 				</h2>
-				<div className="flex justify-center">
-					<p className="font-body text-sm md:text-base text-(--color-ink-muted) leading-relaxed max-w-3xl text-left">
-						А еще мы очень хотим, чтобы у вас остались самые лучшие воспоминания о нашей свадьбе. Поэтому, просим вас заполнить анкету ниже
-						Будем ждать ответ до 12.06.2026.
+				<div className="flex flex-col gap-3 justify-center items-center font-body text-base md:text-lg text-(--color-ink-muted) leading-relaxed  text-left">
+					<p className="max-w-3xl">
+						А еще мы очень хотим, чтобы у вас остались самые лучшие воспоминания о нашей свадьбе. Поэтому, просим вас заполнить анкету ниже. <br />
+						Будем ждать ответ до <span className='font-semibold'>12.06.2026</span>.
+					</p>
+					<p className="max-w-3xl">
+						Мы очень любим детей и однажды сами станем родителями, но формат нашей свадебной вечеринки не подразумевает присутствия маленьких гостей. Будем вам благодарны, если вы заранее позаботитесь о том, с кем оставить детей в этот день.
 					</p>
 				</div>
 			</div>
@@ -217,9 +220,9 @@ const Form = () => {
 					</div>
 				</div>
 			) : (
-				<form onSubmit={handleSubmit(onSubmit)} className="space-y-8 md:space-y-10">
+				<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-center space-y-8 md:space-y-10 mx-auto w-full max-w-3xl">
 					{/* Имя и фамилия */}
-					<div className="space-y-3 md:space-y-4">
+					<div className="space-y-3 md:space-y-4 w-full">
 						<div className="gap-4 md:gap-6 grid grid-cols-1 md:grid-cols-2">
 							<div className="space-y-1">
 								<label className="font-body text-xs md:text-sm text-(--color-ink-muted)">
@@ -274,7 +277,7 @@ const Form = () => {
 					</div>
 
 					{/* Придёте ли вы */}
-					<div className="space-y-3 md:space-y-4">
+					<div className="space-y-3 md:space-y-4 w-full">
 						<p className="font-body text-sm md:text-base text-(--color-ink)">
 							Вы придёте на праздник?
 						</p>
@@ -307,7 +310,7 @@ const Form = () => {
 					{attendance === 'yes' && (
 						<>
 							{/* Партнер */}
-							<div className="space-y-3 md:space-y-4">
+							<div className="space-y-3 md:space-y-4 w-full">
 								<div className="flex flex-col gap-4">
 									<p className="font-body text-sm md:text-base text-(--color-ink)">
 										Приду с партнером
@@ -352,7 +355,7 @@ const Form = () => {
 							</div>
 
 							{/* Предпочтения по напиткам */}
-							<div className="space-y-3 md:space-y-4">
+							<div className="space-y-3 md:space-y-4 w-full">
 								<p className="font-body text-sm md:text-base text-(--color-ink)">
 									Предпочтения по напиткам
 								</p>
@@ -386,7 +389,7 @@ const Form = () => {
 
 							{/* Предпочтения по напиткам партнера */}
 							{withPartner && (
-								<div className="space-y-3 md:space-y-4">
+								<div className="space-y-3 md:space-y-4 w-full">
 									<p className="font-body text-sm md:text-base text-(--color-ink)">
 										Предпочтения по напиткам партнера
 									</p>
@@ -422,7 +425,7 @@ const Form = () => {
 							)}
 
 							{/* Трансфер */}
-							<div className="gap-6 md:gap-8 grid grid-cols-1 md:grid-cols-2">
+							<div className="gap-6 md:gap-8 grid grid-cols-1 md:grid-cols-2 w-full">
 								<div className="space-y-3 md:space-y-4">
 									<div className="">
 										<p className="font-body text-sm md:text-base text-(--color-ink)">
@@ -507,7 +510,7 @@ const Form = () => {
 					)}
 
 					{/* Сообщение для пары */}
-					<div className="space-y-3 md:space-y-4">
+					<div className="space-y-3 md:space-y-4 w-full">
 						<p className="font-body text-sm md:text-base text-(--color-ink)">
 							Сообщение для пары (по желанию)
 						</p>
