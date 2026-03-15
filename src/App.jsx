@@ -12,7 +12,7 @@ function App() {
 				<section className="flex flex-col items-center gap-10 md:gap-14 mx-auto w-full max-w-content">
 					<header className="text-center">
 						<h1 className="font-display text-(--color-ink) text-3xl md:text-5xl tracking-[0.08em]">
-							Приглашение на свадьбу
+							Приглашение на&nbsp;свадьбу
 						</h1>
 					</header>
 					<main>

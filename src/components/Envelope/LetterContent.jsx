@@ -5,7 +5,7 @@ import DressCode from './DressCode';
 import Form from './Form';
 import WelcomeBlock from './WelcomeBlock';
 import GuestText from './GuestText';
-import CounterBlock from './CounterBlock';
+import DetailsBlock from './DetailsBlock';
 
 const LetterContent = () => {
 	return (
@@ -37,7 +37,7 @@ const LetterContent = () => {
 				</div>
 
 				<div className="flex w-full lg:min-h-[600px]">
-					<CounterBlock />
+					<DetailsBlock />
 				</div>
 
 			</div>

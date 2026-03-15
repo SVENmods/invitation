@@ -6,7 +6,7 @@ const Location = () => {
 					Локация
 				</h2>
 				<p className="font-ui text-[0.55rem] md:text-xs tracking-[0.24em] uppercase text-(--color-ink-muted) text-center">
-					Ждем вас по адресу
+					Ждём вас по&nbsp;адресу
 				</p>
 				<p className="font-body text-base md:text-lg text-(--color-ink) mt-2">
 					Агроусадьба "Wooden Villa", агрогородок Колодищи, Узлесная ул., 58, Беларусь
@@ -20,7 +20,7 @@ const Location = () => {
 						rel="noreferrer"
 					>
 						<img
-							src="/img/location.png"
+							src="/img/location.webp"
 							alt="Иллюстрация усадьбы Wooden Villa, место проведения праздника"
 							className="block w-full h-auto"
 							loading="lazy"

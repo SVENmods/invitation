@@ -16,8 +16,8 @@ const DressCode = () => {
 					<div className="flex justify-center">
 						<div className="flex flex-col items-center space-y-3 md:space-y-4 w-full">
 							<p className="font-body text-base md:text-lg text-(--color-ink-muted) leading-relaxed max-w-3xl w-full">
-								Выберите для образа спокойные темные оттенки, которые будут гармонировать с оформлением
-								праздника: черный, коричневый, светло-кофейный, мятный, зеленый, голубой, синий.
+								Выберите для&nbsp;образа спокойные тёмные оттенки, которые будут гармонировать с&nbsp;оформлением
+								праздника: чёрный, коричневый, светло-кофейный, мятный, зелёный, голубой, синий.
 							</p>
 							<div className="flex justify-center pt-1">
 								{/* Кружки для md+ */}
@@ -171,7 +171,7 @@ const DressCode = () => {
 						<div className="divider" />
 						<div className="flex justify-center">
 							<p className="font-body text-xs md:text-sm text-(--color-ink-muted) leading-relaxed max-w-3xl">
-								Для нас главное - ваше присутствие! Но нам будет приятно, если в своих нарядах вы поддержите цветовую гамму нашей свадьбы.
+								Для&nbsp;нас главное&nbsp;— ваше присутствие! Но нам будет приятно, если в&nbsp;своих нарядах вы поддержите цветовую гамму нашей свадьбы.
 							</p>
 						</div>
 					</div>

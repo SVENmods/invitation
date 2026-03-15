@@ -6,9 +6,9 @@ const GuestText = () => {
 			<section className="relative w-full overflow-hidden bg-white/75 border border-(--color-border)/80 shadow-(--shadow-card) rounded-[24px] md:rounded-[28px] px-4 md:px-10 lg:px-14 py-8 md:py-10 ">
 				<div
 					aria-hidden="true"
-					className="right-[-2%] bottom-[-6%] z-1 absolute opacity-10 md:opacity-30 w-2/3 md:w-1/2 lg:w-[58%] h-2/3 md:h-3/4 lg:h-[95%] pointer-events-none select-none"
+					className="right-[-2%] bottom-[-1%] z-1 absolute opacity-10 md:opacity-30 w-2/3 md:w-1/2 lg:w-[120%] h-2/3 md:h-3/4 lg:h-[106%] pointer-events-none select-none"
 					style={{
-						backgroundImage: "url('/img/counter-bg.png')",
+						backgroundImage: "url('/img/counter-bg.webp')",
 						backgroundRepeat: 'no-repeat',
 						backgroundPosition: 'right bottom',
 						backgroundSize: 'contain',
@@ -17,12 +17,12 @@ const GuestText = () => {
 				<div className="z-2 relative flex flex-col h-full">
 					<div className="space-y-3 md:space-y-4 mb-8 md:mb-10 text-center">
 						<h2 className="font-display text-3xl md:text-4xl lg:text-[3.25rem] tracking-[0.08em]  text-(--color-ink)">
-							Дорогие родные и близкие!
+							Дорогие родные и&nbsp;близкие!
 						</h2>
 					</div>
 					<div className="flex justify-center text-justify">
 						<p className="font-body text-sm md:text-lg text-(--color-ink-muted) leading-relaxed max-w-3xl">
-							В нашей жизни скоро состоится важное и радостное для нас событие - день нашей свадьбы! Мы вас очень любим и будем счастливы, если вы проведете вместе с нами этот особенный день.
+							В нашей жизни скоро состоится важное и&nbsp;радостное для нас событие&nbsp;— день нашей свадьбы! Мы вас очень любим и&nbsp;будем счастливы, если вы проведёте вместе с&nbsp;нами этот особенный день.
 						</p>
 					</div>
 					<div className="flex flex-col items-center gap-3 md:gap-4 mt-12">
